@@ -41,7 +41,7 @@ public class Exercicio02ArrayList {
 		} 
 		
 		} while (opcao != 2) ;
-
+         leia.close();
 	}
 
 }

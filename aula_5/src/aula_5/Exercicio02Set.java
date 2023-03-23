@@ -42,7 +42,7 @@ public class Exercicio02Set {
 			}
 
 		} while (opcao != 2);
-
+        leia.close();
 	}
 
 }

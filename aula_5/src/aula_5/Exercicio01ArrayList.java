@@ -22,6 +22,7 @@ public class Exercicio01ArrayList {
 			System.out.println(cor  + "    #" );
 		}
         System.out.println("#############################");
+        leia.close();
 	}
 
 }
