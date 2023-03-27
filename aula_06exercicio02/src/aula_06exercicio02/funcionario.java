@@ -3,13 +3,13 @@ package aula_06exercicio02;
 public class funcionario {
 	private String nome ;
 	private String cpf ;
-	private String cargo;
+	private String telefone;
 	private String contratacao;
 	private float salario ;
-	public funcionario(String nome, String cpf, String cargo, String contratacao, float salario) {
+	public funcionario(String nome, String cpf, String telefone, String contratacao, float salario) {
 		this.nome = nome;
 		this.cpf = cpf;
-		this.cargo = cargo;
+		this.telefone = telefone;
 		this.contratacao = contratacao;
 		this.salario = salario;
 	}
@@ -25,11 +25,11 @@ public class funcionario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getCargo() {
-		return cargo;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getContratacao() {
 		return contratacao;
@@ -51,7 +51,7 @@ public class funcionario {
 		System.out.println("********************************************************");
 		System.out.println("\nNome: "+ this.nome+"                                  ");
 		System.out.println("\nCPF: "+ this.cpf+"                                    ");
-		System.out.println("\nCargo: "+ this.cargo+"                                ");
+		System.out.println("\ntelefone: "+ this.telefone+"                          ");
 		System.out.println("\nData da Contratação: "+ this.contratacao+"            ");
 		System.out.println("\nSalário: "+ this.salario+"                            ");
 		

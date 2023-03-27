@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 import contabancaria.model.conta;
 import contabancaria.util.cores;
-
+import contabancaria.model.contacorrente;
+import contabancaria.model.contapoupanca;
 public class Menu {
 
 	public static void main(String[] args) {
@@ -15,6 +16,20 @@ public class Menu {
 				c1.visualizar();
 				c1.depositar(5000.0f);
 				c1.visualizar();
+				// Teste da Classe Corrente 
+				contacorrente cc1 =new contacorrente (2,123,1,"mariana",15000.0f,1000.0f);
+				cc1.visualizar();
+				cc1.sacar(12000.0f);
+				cc1.visualizar();
+				cc1.depositar(5000.0f);
+				cc1.visualizar();
+				//Teste da classe Conta Poupança
+				contapoupanca cp1 =new contapoupanca(3,123,2,"victor",100000.0f,15);
+				cp1.visualizar();
+				cp1.sacar(1000.0f);
+				cp1.visualizar();
+				cp1.depositar(5000.0f);
+				cp1.visualizar();
 		Scanner leia = new Scanner(System.in);
 		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		String titular;
