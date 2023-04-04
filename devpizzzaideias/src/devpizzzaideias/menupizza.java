@@ -1,17 +1,27 @@
 package devpizzzaideias;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
+import devpizzzaideias.controller.DevpizzaideiasCotroller;
+import devpizzzaideias.model.Devpizzaideias;
 
 public class menupizza {
 
 	public static void main(String[] args) {
+		DevpizzaideiasCotroller Pedidos = new DevpizzaideiasCotroller();
+		ArrayList<Float> notas = new ArrayList<Float>();
+		
 		Scanner leia = new Scanner(System.in);
-		int opcao, pizza,borda,opcao3,opcao4,bebida;
-		String pedido="";
+		int opcao, pizza,borda,opcao3,opcao4,opcao5,bebida,tamanho=0, sabor=0;
+		float valor;
+	
+		
 		
 		do {
 		
-		
+		String pedido="";
 		
 		System.out.println("1-Cadastrar Pedido");
         System.out.println("2-Faturamento Semanal");
@@ -21,7 +31,16 @@ public class menupizza {
 		opcao=leia.nextInt();
 		
 		switch (opcao) {
+		
 		case 1 -> {
+			System.out.println("Escolha o tamanho da Pizza!");
+			System.out.println("1-Pequena");
+			System.out.println("2-Média");
+			System.out.println("3-Grande");
+			opcao5 = leia.nextInt();
+			
+			switch (opcao5) {
+			case 1->{
             System.out.println("1-Frango com Catupiry");
 			System.out.println("2-Calabresa");
 			System.out.println("3-mussarela");
@@ -34,7 +53,10 @@ public class menupizza {
 			
 			
 			
-			case 1 -> {pedido = pedido + "Frango com Catupiry" ; }
+			case 1 -> {pedido = pedido + "Frango com Catupiry" ; 
+			     tamanho = 1;
+			     sabor = 1;
+			}
 
 			case 2 -> { pedido = pedido + "Calabresa" ; }
 
@@ -46,6 +68,74 @@ public class menupizza {
 
 			case 6 -> { pedido = pedido + "Chocolate Branco" ;}
 
+			}
+			}
+			case 2-> {
+				   System.out.println("1-Frango com Catupiry");
+					System.out.println("2-Calabresa");
+					System.out.println("3-mussarela");
+					System.out.println("4-Milho com queijo");
+					System.out.println("5-Chocolate");
+					System.out.println("6-Chocolate Branco ");
+					pizza =leia.nextInt();
+					
+					switch (pizza) {
+					
+					
+					
+					case 1 -> {pedido = pedido + " Frango com Catupiry" ; }
+
+					case 2 -> { pedido = pedido + " Calabresa" ; }
+
+					case 3 -> {pedido = pedido + " Mussarela" ;}
+
+					case 4 -> {pedido = pedido + "Milho com Queijo" ;}
+
+					case 5 -> {pedido = pedido + "Chocolate" ;}
+
+					case 6 -> { pedido = pedido + "Chocolate Branco" ;}
+					}
+					}
+					case 3 -> {   System.out.println("1-Frango com Catupiry");
+					System.out.println("2-Calabresa");
+					System.out.println("3-mussarela");
+					System.out.println("4-Milho com queijo");
+					System.out.println("5-Chocolate");
+					System.out.println("6-Chocolate Branco ");
+					pizza =leia.nextInt();
+					
+					switch (pizza) {
+					
+					
+					
+					case 1 -> {pedido = pedido + "Frango com Catupiry" ; }
+
+					case 2 -> { pedido = pedido + "Calabresa" ; }
+
+					case 3 -> {pedido = pedido + "Mussarela" ;}
+
+					case 4 -> {pedido = pedido + "Milho com Queijo" ;}
+
+					case 5 -> {pedido = pedido + "Chocolate" ;}
+
+					case 6 -> { pedido = pedido + "Chocolate Branco" ;}
+
+					
+					
+					}
+				
+				
+				
+				
+				
+				
+			}
+					
+					
+					
+			
+			
+			
 			}
 			System.out.println("Deseja Borda Recheada?(1-sim/2-não)");
 			borda =leia.nextInt();
@@ -60,10 +150,12 @@ public class menupizza {
 				
 				
 				switch (opcao3) {
-				case 1 -> { pedido = pedido + " Borda de Catupiry" ;}
-				case 2 -> { pedido = pedido + " Borda de Cheddar" ;}
-				case 3 -> { pedido = pedido + " Borda de Chocolate" ;}
-				case 4 -> { pedido = pedido + " Borda de Doce de Leite" ;}
+				case 1 -> { pedido = pedido + " com  Borda de Catupiry" ;
+				borda= 1 ;}
+				
+				case 2 -> { pedido = pedido + " com Borda de Cheddar" ;}
+				case 3 -> { pedido = pedido + " com Borda de Chocolate" ;}
+				case 4 -> { pedido = pedido + " com Borda de Doce de Leite" ;}
 				
 				
 				
@@ -92,10 +184,11 @@ public class menupizza {
 				
 				
 				switch (opcao4) {
-				case 1 -> { pedido = pedido + " Com Suco de Laranja" ;}
-				case 2 -> { pedido = pedido + " Com Suco del Vale" ;}
-				case 3 -> { pedido = pedido + " Com Coca-Cola" ;}
-				case 4 -> { pedido = pedido + " Com Guaraná Antartica" ;}
+				case 1 -> { pedido = pedido + " e Suco de Laranja" ;
+				bebida = 1;}
+				case 2 -> { pedido = pedido + " e Suco del Vale" ;}
+				case 3 -> { pedido = pedido + " e Coca-Cola" ;}
+				case 4 -> { pedido = pedido + " e Guaraná Antartica" ;}
 				
 				
 				
@@ -109,13 +202,24 @@ public class menupizza {
 			
 			
 			
-			}else {  pedido = pedido + " Sem Bebida" ; }
+			}else { pedido = pedido + " Sem Bebida" ; }
+			
+			valor = 35.0f ;
 			
        System.out.println("Pedido Pizza de : "+ pedido);
+       notas.add(valor);
+       Pedidos.cadastrarpedido(new Devpizzaideias(tamanho,sabor,borda,bebida,valor));
+        
 		}
 
 		case 2 -> {
-			
+			Pedidos.faturamentodiariao();
+			      
+			    	  var  soma = notas.stream().mapToInt(Float::intValue).sum();
+			    	  System.out.println(soma);
+			    	  
+			    	  
+			      
 		}
 
 		case 3 -> {

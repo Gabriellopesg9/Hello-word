@@ -93,12 +93,14 @@ public class Menu {
 				System.out.println("Digite o número da conta: ");
 				
 				numero = leia.nextInt();
+				contas.procurarPoNumero(numero);
 				keyPress();			}
 			case 4 -> {System.out.println("Atualizar Dados da Conta");
 			System.out.println("Digite o número da conta: ");
 			numero = leia.nextInt();
+			if(contas.buscarNacollection(numero) != null) {
 
-			tipo = 1;
+			tipo =contas.retornaTipo(numero); 
 			// condicional buscar na collection
 
 			System.out.println("Digite o Numero da Agência: ");
@@ -117,18 +119,22 @@ public class Menu {
 				System.out.println("Digite o Limite de Crédito (R$): ");
 				limite = leia.nextFloat();
 
-				// criar o objeto conta corrente
+				contas.atualizar(new contacorrente(numero,agencia,tipo,titular,saldo,limite));
 			}
 			case 2 -> {
 				System.out.println("Digite o dia do Aniversario da Conta: ");
 				aniversario = leia.nextInt();
 
-				// criar o objeto conta poupanca
+				contas.atualizar(new contapoupanca(numero, agencia, tipo, titular, saldo, aniversario));
 
 			}
 			default -> {
 				System.out.println("Tipo de conta inválido!");
 			}
+			}
+			
+			}else {
+				System.out.println("A Conta não foi encontrada!");
 			}
 
 			// fim do condicional buscar na collection
@@ -141,6 +147,7 @@ public class Menu {
 				System.out.println("Apagar Conta");
 				System.out.println("Digite o número da conta: ");
 				numero = leia.nextInt();
+				contas.deletar(numero);
 				keyPress();
 			}
 			case 6 -> {
@@ -149,6 +156,7 @@ public class Menu {
 				numero = leia.nextInt();
 				System.out.println("Digite o valor do Saque: ");
 				valor = leia.nextFloat();
+				contas.sacar(numero, valor);
 				keyPress();
 			}
 			case 7 -> {
@@ -158,6 +166,7 @@ public class Menu {
 
 				System.out.println("Digite o valor do Depósito: ");
 				valor = leia.nextFloat();
+				contas.depositar(numero, valor);
 				keyPress();
 			}
 			case 8 -> {System.out.println("Transferir valores entre Contas");
@@ -172,6 +181,7 @@ public class Menu {
 				System.out.println("Digite o Valor da Transferência (R$): ");
 				valor = leia.nextFloat();
 			} while (valor <= 0);
+			contas.transferir(numero, numeroDestino, valor);
 			keyPress();
 			}
 			
